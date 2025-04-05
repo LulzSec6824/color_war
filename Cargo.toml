@@ -9,11 +9,22 @@ nalgebra = "0.33.2"
 rand = "0.9.0"
 
 [profile.release]
-opt-level = 3
+opt-level = "z"
 debug = false
-split-debuginfo = "off"
+debug-assertions = false
 overflow-checks = false
 lto = true
-codegen-units = 20
-strip = "debuginfo"
+codegen-units = 1
+strip = true
 build-override.strip = "symbols"
+
+[profile.dev]
+opt-level = 0
+debug = true
+debug-assertions = true
+overflow-checks = true
+lto = false
+panic = "unwind"
+incremental = true
+codegen-units = 256
+rpath = false
