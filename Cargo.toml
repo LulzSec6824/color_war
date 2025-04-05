@@ -1,6 +1,19 @@
 [package]
-name = "make"
+name = "game"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+ggez = "0.9.3"
+nalgebra = "0.33.2"
+rand = "0.9.0"
+
+[profile.release]
+opt-level = 3
+debug = false
+split-debuginfo = "off"
+overflow-checks = false
+lto = true
+codegen-units = 20
+strip = "debuginfo"
+build-override.strip = "symbols"
