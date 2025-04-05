@@ -69,7 +69,7 @@ impl GameState {
     /// # Returns
     /// * A new GameState instance with empty board and initial game settings
     fn new() -> Self {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
         let mut player_order: Vec<usize> = (0..PLAYERS).collect();
         player_order.shuffle(&mut rng);
 
