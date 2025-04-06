@@ -72,4 +72,4 @@ Color War is a strategic board game where players compete to control the board b
 - Sometimes it's better to reinforce your existing positions than to expand
 
 ## 🙏 Credits
-Developed as a Rust implementation of the classic Chain Reaction game concept.
+Developed as a practice Rust implementation of the classic Chain Reaction game concept.
