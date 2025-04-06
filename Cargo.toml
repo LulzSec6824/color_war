@@ -8,16 +8,6 @@ ggez = "0.9.3"
 nalgebra = "0.33.2"
 rand = "0.9.0"
 
-[profile.release]
-opt-level = "z"
-debug = false
-debug-assertions = false
-overflow-checks = false
-lto = true
-codegen-units = 1
-strip = true
-build-override.strip = "symbols"
-
 [profile.dev]
 opt-level = 0
 debug = true
@@ -28,3 +18,13 @@ panic = "unwind"
 incremental = true
 codegen-units = 256
 rpath = false
+
+[profile.release]
+opt-level = "z"
+debug = false
+debug-assertions = false
+overflow-checks = false
+lto = true
+codegen-units = 1
+strip = true
+build-override.strip = "symbols"
