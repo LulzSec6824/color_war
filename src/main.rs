@@ -18,7 +18,6 @@ const PLAYERS: usize = 4;
 const ANIMATION_DURATION: f32 = 0.1;
 const BOARD_MARGIN: f32 = 4.0 * CELL_SIZE;
 
-
 /// Represents a single cell on the game board.
 /// Each cell can be owned by a player and contains a power level that determines when it explodes.
 #[derive(Clone, Copy, Debug, PartialEq)]
