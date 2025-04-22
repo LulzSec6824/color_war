@@ -538,6 +538,8 @@ impl EventHandler for GameState {
     }
 }
 
+
+
 /// Entry point of the game.
 /// Sets up the game window and starts the game loop.
 ///
