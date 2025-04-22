@@ -544,12 +544,14 @@ impl EventHandler for GameState {
 /// # Returns
 /// * GameResult indicating success or failure
 fn main() -> GameResult {
-    let window_width = (COLS as f32 * CELL_SIZE) + (2.0 * BOARD_MARGIN);
     let window_height = (ROWS as f32 * CELL_SIZE) + (2.0 * BOARD_MARGIN);
 
     let (ctx, event_loop) = ContextBuilder::new("color_war", "Author")
         .window_setup(ggez::conf::WindowSetup::default().title("Color War - Chain Reaction"))
-        .window_mode(ggez::conf::WindowMode::default().dimensions(window_width, window_height))
+        .window_mode(ggez::conf::WindowMode::default().dimensions(
+            (COLS as f32 * CELL_SIZE) + (2.0 * BOARD_MARGIN),
+            window_height,
+        ))
         .build()
         .expect("Failed to build ggez context");
     let state = GameState::new();
