@@ -546,7 +546,7 @@ impl EventHandler for GameState {
 fn main() -> GameResult {
     let window_height = (ROWS as f32 * CELL_SIZE) + (2.0 * BOARD_MARGIN);
 
-    let (ctx, event_loop) = ContextBuilder::new("color_war", "Author")
+    let (ctx, event_loop) = ContextBuilder::new("color_war", "LulzSec6824")
         .window_setup(ggez::conf::WindowSetup::default().title("Color War - Chain Reaction"))
         .window_mode(ggez::conf::WindowMode::default().dimensions(
             (COLS as f32 * CELL_SIZE) + (2.0 * BOARD_MARGIN),
