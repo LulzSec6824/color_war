@@ -417,22 +417,22 @@ impl GameState {
     /// # Returns
     /// * GameResult indicating success or failure
     fn draw_turn_messages(&self, canvas: &mut graphics::Canvas, ctx: &mut Context) -> GameResult {
-        if self.game_over {
-            if let Some(winner) = self.winner {
-                let winner_message = format!("{} player wins!", self.get_player_name(winner));
-                let message_text = graphics::Text::new(winner_message);
-                let text_dims = message_text.dimensions(ctx).unwrap();
-                let x = (COLS as f32 * CELL_SIZE + 2.0 * BOARD_MARGIN - text_dims.w) / 2.0;
-                let y = BOARD_MARGIN / 2.0 - text_dims.h / 2.0;
+        if self.game_over
+            && let Some(winner) = self.winner
+        {
+            let winner_message = format!("{} player wins!", self.get_player_name(winner));
+            let message_text = graphics::Text::new(winner_message);
+            let text_dims = message_text.dimensions(ctx).unwrap();
+            let x = (COLS as f32 * CELL_SIZE + 2.0 * BOARD_MARGIN - text_dims.w) / 2.0;
+            let y = BOARD_MARGIN / 2.0 - text_dims.h / 2.0;
 
-                canvas.draw(
-                    &message_text,
-                    graphics::DrawParam::default()
-                        .color(self.get_player_color(winner))
-                        .dest([x, y]),
-                );
-                return Ok(());
-            }
+            canvas.draw(
+                &message_text,
+                graphics::DrawParam::default()
+                    .color(self.get_player_color(winner))
+                    .dest([x, y]),
+            );
+            return Ok(());
         }
 
         let turn_message = &self.turn_messages[self.current_player];
